@@ -1,0 +1,4 @@
+== Dads Matter Too
+
+* Ruby version - Ruby 2.0; Rails 4.0
+

@@ -1,0 +1,49 @@
+ <div class="inner cover">
+  <h4 class="cover-heading">Make his next weekend special</h4>
+
+  <div class="row">
+    <div class="col-md-3">
+       <p class="lead"> Dad's Info</p>
+
+       <%= form_for :dad do |d| %>
+        <p>
+          <%= d.text_field :name, placeholder: 'Dad\'s name' %> <br />
+          <%= d.text_field :birthday, placeholder: 'Dad\'s birthday' %> <br />
+          <%= d.text_field :email, placeholder: 'Dad\'s email' %> <br />
+        </p>
+       <% end %>
+
+    </div>
+
+    <div class="col-md-3">
+      <p class="lead"> Your Memories</p>
+        <%= form_for :user do | me| %>
+        <p>
+          <%= me.text_field :memory_one, placeholder: "Baby memory" %>
+          <%= me.text_field :memory_two, placeholder: "Happy time with dad" %>
+          <%= me.text_field :memory_three, placeholder: "Latest of you and dad" %>
+
+        </p>
+        <% end %>
+    </div>
+
+     <div class="col-md-3">
+       <p class="lead"> Photos </p>
+
+       <%= form_for :user do |me| %>
+        <p>
+          <%= me.file_field :photo_one %>
+          <%= me.file_field :photo_two %>
+          <%= me.file_field :photo_three %>
+
+        </p>
+       <% end %>
+
+    </div>
+
+  </div>
+
+  <p class="lead">
+    <a href="#" class="btn btn-lg btn-default">Hooray</a>
+  </p>
+</div>
