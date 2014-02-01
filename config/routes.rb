@@ -3,9 +3,9 @@ Daddy::Application.routes.draw do
   get "memories/create"
   get "memories/destroy"
 
-  resources :dad do
-    resources :memories
-  end
+  resources :dad
+  resources :memories
+
 
   root to: "memories#index"
 
