@@ -8,9 +8,9 @@ class MemoriesController < ApplicationController
   end
 
   def create
-    @dad = Dad.new(params[:dad].permit(:name, :birthdate, :email))
-    @dad.save
-    redirect_to @dad
+    @user = User.new(params[:user].permit(:memory_one, :memory_two, :memory_three, :photo_one,:photo_two, :photo_three ))
+    @user.save
+    redirect_to @user
   end
 
   def destroy

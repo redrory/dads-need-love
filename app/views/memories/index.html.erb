@@ -1,27 +1,23 @@
  <div class="inner cover">
   <h4 class="cover-heading">Make his next weekend special</h4>
-
   <div class="row">
     <div class="col-md-3">
        <p class="lead"> Dad's Info</p>
 
-       <%= form_for :dad do |d| %>
+       <%= form_for :user do |u| %>
         <p>
-          <%= d.text_field :name, placeholder: 'Dad\'s name' %> <br />
-          <%= d.text_field :email, placeholder: 'Dad\'s email' %> <br />
-          <%= d.date_select :birthdate, placeholder: 'Dad\'s birthday' %> <br />
+          <%= u.text_field :name, placeholder: 'Dad\'s name' %> <br />
+          <%= u.text_field :email, placeholder: 'Dad\'s email' %> <br />
+          <%= u.date_select :birthdate, placeholder: 'Dad\'s birthday' %> <br />
         </p>
-
     </div>
 
     <div class="col-md-3">
       <p class="lead"> Your Memories</p>
-        <%#= fields_for :user do | me| %>
         <p>
-          <%#= me.text_field :memory_one, placeholder: "Baby memory" %>
-          <%#= me.text_field :memory_two, placeholder: "Happy time with dad" %>
-          <%#= me.text_field :memory_three, placeholder: "Latest of you and dad" %>
-
+          <%= u.text_field :memory_one, placeholder: "Baby memory" %>
+          <%= u.text_field :memory_two, placeholder: "Happy time with dad" %>
+          <%= u.text_field :memory_three, placeholder: "Latest of you and dad" %>
         </p>
 
     </div>
@@ -30,17 +26,17 @@
        <p class="lead"> Photos </p>
 
         <p>
-          <%#= me.file_field :photo_one %>
-          <%#= me.file_field :photo_two %>
-          <%#= me.file_field :photo_three %>
-          <%# end %>
+          <%= u.file_field :photo_one %>
+          <%= u.file_field :photo_two %>
+          <%= u.file_field :photo_three %>
+          <%= u.submit 'Make Dad Happy',:class => 'btn btn-lg btn-default' %>
+          <% end %>
         </p>
     </div>
 
   </div>
 
   <p class="lead">
-     <%= d.submit 'Make Dad Happy',:class => 'btn btn-lg btn-default' %>
-       <% end %>
+
   </p>
 </div>
