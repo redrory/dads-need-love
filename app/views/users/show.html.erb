@@ -1,1 +1,14 @@
-<%= image_tag(@user.photo_one) %>
+<div class="inner cover">
+  <h1 class="cover-heading">All ready to go</h1>
+  <p class="lead">Your three memories have been saved. Will be automatically sent to your dad next Friday, Saturday & Sunday </p>
+  <div class="row">
+    <%= image_tag(@user.photo_one, height: '100', :class => 'img-rounded') %>
+    <%= image_tag(@user.photo_two, height: '100', :class => 'img-rounded') %>
+    <%= image_tag(@user.photo_three, height: '100', :class => 'img-rounded') %>
+</div>
+</p>
+</div>
+
+
+
+<%#= image_tag(@user.photo_one) %>

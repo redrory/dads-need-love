@@ -1,18 +1,32 @@
  <div class="inner cover">
   <h4 class="cover-heading">Make his next weekend special</h4>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
        <p class="lead"> Dad's Info</p>
 
        <%= form_for :user do |u| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h6> <%= pluralize(@user.errors.count, "errors")%> prohibited this post from being saved: </h6>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li> <%= msg %></li>
+              <% end %>
+            </ul>
+
+          </div>
+        <% end %>
+
+
+
         <p>
-          <%= u.text_field :name, placeholder: 'Dad\'s name' %> <br />
-          <%= u.text_field :email, placeholder: 'Dad\'s email' %> <br />
-          <%= u.date_select :birthdate, placeholder: 'Dad\'s birthday' %> <br />
+          <%= u.text_field :dad_name, placeholder: 'Dad\'s name' %> <br />
+          <%= u.text_field :dad_email, placeholder: 'Dad\'s email' %> <br />
+          <%= u.date_select :dad_bday, placeholder: 'Dad\'s birthday' %> <br />
         </p>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <p class="lead"> Your Memories</p>
         <p>
           <%= u.text_field :memory_one, placeholder: "Baby memory" %>
@@ -22,21 +36,22 @@
 
     </div>
 
-     <div class="col-md-3">
+     <div class="col-md-4">
        <p class="lead"> Photos </p>
 
         <p>
           <%= u.file_field :photo_one %>
           <%= u.file_field :photo_two %>
           <%= u.file_field :photo_three %>
-          <%= u.submit 'Make Dad Happy',:class => 'btn btn-lg btn-default' %>
-          <% end %>
+
+
         </p>
     </div>
 
   </div>
 
   <p class="lead">
-
+    <%= u.submit 'Make Dad Happy',:class => 'btn btn-lg btn-default' %>
+    <% end %>
   </p>
 </div>

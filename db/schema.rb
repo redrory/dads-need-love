@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201043442) do
+ActiveRecord::Schema.define(version: 20140202013828) do
 
   create_table "dads", force: true do |t|
     t.string   "name"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20140201043442) do
     t.string   "memory_three"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "dad_name"
+    t.string   "dad_email"
+    t.date     "dad_bday"
   end
 
 end
