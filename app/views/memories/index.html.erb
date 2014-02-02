@@ -22,7 +22,7 @@
         <p>
           <%= u.text_field :dad_name, placeholder: 'Dad\'s name' %> <br />
           <%= u.text_field :dad_email, placeholder: 'Dad\'s email' %> <br />
-          <%= u.date_select :dad_bday, placeholder: 'Dad\'s birthday' %> <br />
+          <%= u.date_select :dad_bday, placeholder: 'Dad\'s birthday', order: [:month, :day, :year ], use_short_month: true, start_year: 1925 , end_year: 1980   %> <br />
         </p>
     </div>
 
